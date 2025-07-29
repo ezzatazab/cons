@@ -1,0 +1,181 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-05-12 19:59:37.682995",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_0s6a",
+  "naming_series",
+  "type",
+  "supplier",
+  "customer",
+  "column_break_wukj",
+  "date",
+  "project",
+  "tender_no",
+  "section_break_vqqe",
+  "contracting_work_items",
+  "items_summary_section",
+  "summary_items_cost",
+  "section_break_zweu",
+  "total_valuation",
+  "total_estimated_selling_price",
+  "amended_from",
+  "column_break_spdq",
+  "total_profit",
+  "profit_margin"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_0s6a",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Estimated Cost Voucher",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "depends_on": "eval:doc.type==\"Outward\"",
+   "fetch_from": "project.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "project.custom_tender_no",
+   "fieldname": "tender_no",
+   "fieldtype": "Data",
+   "label": "Tender No"
+  },
+  {
+   "fieldname": "column_break_wukj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "read_only": 1
+  },
+  {
+   "default": "ECV-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "naming series",
+   "options": "ECV-"
+  },
+  {
+   "fieldname": "section_break_vqqe",
+   "fieldtype": "Section Break",
+   "label": "items"
+  },
+  {
+   "fieldname": "contracting_work_items",
+   "fieldtype": "Table",
+   "label": "Contracting work items",
+   "options": "Contracting work items"
+  },
+  {
+   "fieldname": "section_break_zweu",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "total_valuation",
+   "fieldtype": "Float",
+   "label": "Total Valuation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_estimated_selling_price",
+   "fieldtype": "Float",
+   "label": "Total Estimated Selling Price",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_spdq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_profit",
+   "fieldtype": "Float",
+   "label": "Total Profit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "profit_margin",
+   "fieldtype": "Percent",
+   "label": "Profit Margin",
+   "read_only": 1
+  },
+  {
+   "fieldname": "items_summary_section",
+   "fieldtype": "Section Break",
+   "label": "Items Summary"
+  },
+  {
+   "fieldname": "summary_items_cost",
+   "fieldtype": "Table",
+   "label": "Summary items cost",
+   "options": "Summary items cost"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Inward\nOutward"
+  },
+  {
+   "depends_on": "eval:doc.type==\"Inward\"",
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-05-28 23:03:01.974887",
+ "modified_by": "Administrator",
+ "module": "cons",
+ "name": "Estimated Cost Voucher",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,240 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-05-14 20:04:23.948172",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_wcif",
+  "naming_series",
+  "item_category",
+  "uom",
+  "start_date",
+  "end_date",
+  "amended_from",
+  "column_break_ylsg",
+  "item",
+  "project_qty",
+  "project",
+  "owner1",
+  "expected_time_period",
+  "section_break_fyyx",
+  "cost_of_raw_materials",
+  "total_cost_of_raw_materials",
+  "section_break_ckpe",
+  "labor_costs",
+  "total_labor_costs",
+  "sub_contracting_section",
+  "sub_contracing_table",
+  "total_sub_contracing_value",
+  "expenses_section_section",
+  "expenses",
+  "total_expenses",
+  "section_break_mqoj",
+  "total_value",
+  "column_break_wnyv",
+  "estimated_cost_voucher",
+  "row_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_wcif",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "BOQ",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "BOQ-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "naming Series",
+   "options": "BOQ-"
+  },
+  {
+   "fieldname": "item_category",
+   "fieldtype": "Link",
+   "label": "Item Category",
+   "options": "Item Category"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "column_break_ylsg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "project_qty",
+   "fieldtype": "Float",
+   "label": "Project Qty"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "owner1",
+   "fieldtype": "Link",
+   "label": "Owner1",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "expected_time_period",
+   "fieldtype": "Data",
+   "label": "Expected time period"
+  },
+  {
+   "fieldname": "section_break_fyyx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cost_of_raw_materials",
+   "fieldtype": "Table",
+   "label": "Cost of Raw Materials",
+   "options": "Cost of Raw Materials"
+  },
+  {
+   "fieldname": "total_cost_of_raw_materials",
+   "fieldtype": "Float",
+   "label": "Total Cost of Raw Materials",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ckpe",
+   "fieldtype": "Section Break",
+   "label": "Labors Costs Section"
+  },
+  {
+   "fieldname": "labor_costs",
+   "fieldtype": "Table",
+   "label": "Labor costs",
+   "options": "Costs table"
+  },
+  {
+   "fieldname": "total_labor_costs",
+   "fieldtype": "Float",
+   "label": "Total Labor costs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sub_contracting_section",
+   "fieldtype": "Section Break",
+   "label": "Sub-contracting Section"
+  },
+  {
+   "fieldname": "sub_contracing_table",
+   "fieldtype": "Table",
+   "label": "Sub-Contracing Table",
+   "options": "Costs table"
+  },
+  {
+   "fieldname": "total_sub_contracing_value",
+   "fieldtype": "Float",
+   "label": "Total Sub Contracing value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "expenses_section_section",
+   "fieldtype": "Section Break",
+   "label": "Expenses Section"
+  },
+  {
+   "fieldname": "expenses",
+   "fieldtype": "Table",
+   "label": "Expenses",
+   "options": "Costs table"
+  },
+  {
+   "fieldname": "total_expenses",
+   "fieldtype": "Float",
+   "label": "Total Expenses",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mqoj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_value",
+   "fieldtype": "Float",
+   "label": "Total Value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wnyv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "estimated_cost_voucher",
+   "fieldtype": "Link",
+   "label": "Estimated Cost Voucher",
+   "options": "Estimated Cost Voucher",
+   "read_only": 1
+  },
+  {
+   "fieldname": "row_id",
+   "fieldtype": "Data",
+   "label": "Row ID",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-05-16 02:49:31.398923",
+ "modified_by": "Administrator",
+ "module": "cons",
+ "name": "BOQ",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

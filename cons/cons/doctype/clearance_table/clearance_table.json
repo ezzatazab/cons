@@ -1,0 +1,280 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-22 21:55:47.324039",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "details_section",
+  "idx1",
+  "item_category",
+  "item",
+  "rate",
+  "column_break_azqd",
+  "main",
+  "uom",
+  "qty",
+  "amount",
+  "calculate_on",
+  "current_section",
+  "current_completation_percentage",
+  "column_break_ewpd",
+  "current_completed_qty",
+  "column_break_syek",
+  "current_amount",
+  "previous_section",
+  "previous_completed_percentage",
+  "column_break_usvp",
+  "previous_completed_qty",
+  "column_break_rpnf",
+  "previous",
+  "section_break_uzre",
+  "achieved_completed_percentage",
+  "column_break_zswq",
+  "achieved_completed_qty",
+  "column_break_fyiu",
+  "achieved_amount",
+  "section_break_xmqs",
+  "outstanding_percentage",
+  "column_break_aztf",
+  "outstanding_qty",
+  "column_break_axud",
+  "outstanding_amount"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "columns": 1,
+   "default": "0",
+   "fieldname": "main",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Main"
+  },
+  {
+   "columns": 1,
+   "fieldname": "idx1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "idx1"
+  },
+  {
+   "columns": 2,
+   "fieldname": "item_category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Item Category",
+   "options": "Item Category"
+  },
+  {
+   "columns": 2,
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "columns": 1,
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "columns": 1,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Qty"
+  },
+  {
+   "columns": 1,
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Rate"
+  },
+  {
+   "columns": 1,
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "current_section",
+   "fieldtype": "Section Break",
+   "label": "Current"
+  },
+  {
+   "fieldname": "current_completation_percentage",
+   "fieldtype": "Percent",
+   "label": "Current Completation Percentage",
+   "mandatory_depends_on": "eval:doc.calculate_on==\"Percentage\"",
+   "read_only_depends_on": "eval:doc.calculate_on==\"Qty\""
+  },
+  {
+   "fieldname": "column_break_ewpd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "current_completed_qty",
+   "fieldtype": "Float",
+   "label": "Current Completed Qty",
+   "mandatory_depends_on": "eval:doc.calculate_on==\"Qty\"",
+   "read_only_depends_on": "eval:doc.calculate_on==\"Percentage\""
+  },
+  {
+   "fieldname": "column_break_syek",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "current_amount",
+   "fieldtype": "Float",
+   "label": "Current Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_azqd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "previous_section",
+   "fieldtype": "Section Break",
+   "label": "Previous"
+  },
+  {
+   "fieldname": "previous_completed_percentage",
+   "fieldtype": "Percent",
+   "label": "Previous Completed Percentage",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_usvp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "previous_completed_qty",
+   "fieldtype": "Float",
+   "label": "Previous Completed Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rpnf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "previous",
+   "fieldtype": "Float",
+   "label": "Previous",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_uzre",
+   "fieldtype": "Section Break",
+   "label": "Achieved"
+  },
+  {
+   "fieldname": "column_break_zswq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_fyiu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "achieved_completed_percentage",
+   "fieldtype": "Percent",
+   "label": "Achieved Completed Percentage",
+   "read_only": 1
+  },
+  {
+   "fieldname": "achieved_completed_qty",
+   "fieldtype": "Float",
+   "label": "Achieved Completed Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "achieved_amount",
+   "fieldtype": "Float",
+   "label": "Achieved Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_xmqs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "outstanding_percentage",
+   "fieldtype": "Percent",
+   "label": "Outstanding Percentage",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_aztf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "outstanding_qty",
+   "fieldtype": "Float",
+   "label": "Outstanding Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_axud",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Float",
+   "label": "Outstanding Amount",
+   "read_only": 1
+  },
+  {
+   "default": "Qty",
+   "fieldname": "calculate_on",
+   "fieldtype": "Select",
+   "label": "Calculate On",
+   "options": "Qty\nPercentage"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-05-22 22:40:42.207824",
+ "modified_by": "Administrator",
+ "module": "cons",
+ "name": "Clearance Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
