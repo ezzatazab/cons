@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-27 22:34:14.489546",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "outward_accounts_section",
+  "business_guarantee_insurance_account_outward",
+  "down_payment_discount_account_outward",
+  "tax_account",
+  "column_break_tfzc",
+  "receivable_account",
+  "income_account",
+  "section_break_beub",
+  "down_payment_discount_account_inward",
+  "business_guarantee_insurance_account_inward",
+  "column_break_nmph",
+  "payable_account",
+  "expense_account"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_beub",
+   "fieldtype": "Section Break",
+   "label": "Inward"
+  },
+  {
+   "fieldname": "outward_accounts_section",
+   "fieldtype": "Section Break",
+   "label": "Outward Accounts"
+  },
+  {
+   "fieldname": "receivable_account",
+   "fieldtype": "Link",
+   "label": "Receivable Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "payable_account",
+   "fieldtype": "Link",
+   "label": "Payable Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_tfzc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "income_account",
+   "fieldtype": "Link",
+   "label": "Income Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_nmph",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expense_account",
+   "fieldtype": "Link",
+   "label": "Expense Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "business_guarantee_insurance_account_outward",
+   "fieldtype": "Link",
+   "label": "Business Guarantee Insurance Account Outward",
+   "options": "Account"
+  },
+  {
+   "fieldname": "down_payment_discount_account_outward",
+   "fieldtype": "Link",
+   "label": "Down Payment Discount Account Outward",
+   "options": "Account"
+  },
+  {
+   "fieldname": "down_payment_discount_account_inward",
+   "fieldtype": "Link",
+   "label": "Down Payment Discount Account Inward",
+   "options": "Account"
+  },
+  {
+   "fieldname": "business_guarantee_insurance_account_inward",
+   "fieldtype": "Link",
+   "label": "Business Guarantee Insurance Account Inward",
+   "options": "Account"
+  },
+  {
+   "fieldname": "tax_account",
+   "fieldtype": "Link",
+   "label": "Tax Account",
+   "options": "Account"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-06-02 20:41:45.649992",
+ "modified_by": "Administrator",
+ "module": "cons",
+ "name": "Clearance Accounts Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

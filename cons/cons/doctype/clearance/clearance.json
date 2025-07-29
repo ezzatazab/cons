@@ -1,0 +1,336 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-05-21 20:42:17.597550",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ss6e",
+  "naming_series",
+  "customer",
+  "supplier",
+  "bill_status",
+  "project",
+  "description",
+  "column_break_xxak",
+  "sales_invoice",
+  "sales_order",
+  "purchase_order",
+  "posting_date",
+  "purchase_invoice",
+  "delivery_date",
+  "sales_order_total",
+  "purchase_order_total",
+  "section_break_kxwd",
+  "clerance_no",
+  "total_clearance_amount",
+  "down_payment_discount_rate",
+  "business_guarantee_insurance_discount_rate",
+  "total_taxes",
+  "total_after_tax",
+  "cash_account",
+  "column_break_ihwa",
+  "clearance_type",
+  "status",
+  "down_payment_discount_amount",
+  "business_guarantee_insurance_discount_amount",
+  "final_insurance_rate",
+  "final_insurance_amount",
+  "discount_amount",
+  "section_break_hfsc",
+  "contracting_table",
+  "section_break_dwte",
+  "sales_taxes_and_charges",
+  "purchase_taxes_and_charges",
+  "discount_section",
+  "discount_table",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ss6e",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Clearance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "CLE-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CLE-"
+  },
+  {
+   "depends_on": "eval:doc.clearance_type==\"Outward\"",
+   "fetch_from": "sales_order.transaction_date",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Sales Order Date"
+  },
+  {
+   "fieldname": "clerance_no",
+   "fieldtype": "Int",
+   "label": "Clerance No"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Current\nFinal"
+  },
+  {
+   "fieldname": "column_break_xxak",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.clearance_type==\"Outward\"",
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_break_hfsc",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "contracting_table",
+   "fieldtype": "Table",
+   "label": "Contracting Table",
+   "options": "Clearance Table"
+  },
+  {
+   "depends_on": "eval:doc.clearance_type==\"Outward\"",
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "fieldname": "clearance_type",
+   "fieldtype": "Select",
+   "label": "Clearance Type",
+   "options": "Outward\nInward"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Today",
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Delivery Date",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "sales_order.project",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "depends_on": "eval:doc.clearance_type==\"Outward\"",
+   "fetch_from": "sales_order.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "project.custom_down_payment_discount_rate",
+   "fieldname": "down_payment_discount_rate",
+   "fieldtype": "Percent",
+   "label": "Down Payment Discount Rate"
+  },
+  {
+   "fetch_from": "project.custom_business_guarantee_insurance_discount_rate",
+   "fieldname": "business_guarantee_insurance_discount_rate",
+   "fieldtype": "Percent",
+   "label": "Business Guarantee Insurance Discount Rate"
+  },
+  {
+   "fetch_from": "project.custom_final_insurance_rate",
+   "fieldname": "final_insurance_rate",
+   "fieldtype": "Percent",
+   "hidden": 1,
+   "label": "Final Insurance Rate"
+  },
+  {
+   "fieldname": "section_break_kxwd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ihwa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_dwte",
+   "fieldtype": "Section Break",
+   "label": "Taxes"
+  },
+  {
+   "fieldname": "down_payment_discount_amount",
+   "fieldtype": "Float",
+   "label": "Down Payment Discount Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_guarantee_insurance_discount_amount",
+   "fieldtype": "Float",
+   "label": "Business Guarantee Insurance Discount Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_clearance_amount",
+   "fieldtype": "Float",
+   "label": "Total Clearance Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Float",
+   "label": "Discount Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "discount_table",
+   "fieldtype": "Table",
+   "label": "Discount Table",
+   "options": "Discount Table"
+  },
+  {
+   "depends_on": "eval:doc.clearance_type==\"Inward\"",
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "depends_on": "eval:doc.clearance_type==\"Inward\"",
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "label": "Purchase Order",
+   "options": "Purchase Order"
+  },
+  {
+   "fieldname": "bill_status",
+   "fieldtype": "Select",
+   "label": "Bill Status",
+   "options": "Unpaid\nPaid\nPartially Paid",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.clearance_type==\"Inward\"",
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Link",
+   "label": "Purchase Invoice",
+   "options": "Purchase Invoice",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.clearance_type==\"Outward\"",
+   "fieldname": "sales_taxes_and_charges",
+   "fieldtype": "Table",
+   "label": "Sales Taxes and Charges",
+   "options": "Sales Taxes and Charges"
+  },
+  {
+   "fieldname": "discount_section",
+   "fieldtype": "Section Break",
+   "label": "Discount"
+  },
+  {
+   "depends_on": "eval:doc.clearance_type==\"Inward\"",
+   "fieldname": "purchase_taxes_and_charges",
+   "fieldtype": "Table",
+   "label": "Purchase Taxes and Charges",
+   "options": "Purchase Taxes and Charges"
+  },
+  {
+   "fieldname": "total_taxes",
+   "fieldtype": "Float",
+   "label": "Total Taxes"
+  },
+  {
+   "fieldname": "total_after_tax",
+   "fieldtype": "Float",
+   "label": "Total After Tax"
+  },
+  {
+   "depends_on": "eval:doc.status==\"Final\"",
+   "fieldname": "final_insurance_amount",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Final Insurance Amount",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.clearance_type==\"Outward\"",
+   "fetch_from": "sales_order.base_total",
+   "fieldname": "sales_order_total",
+   "fieldtype": "Float",
+   "label": "Sales Order Total",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.status==\"Final\"",
+   "fieldname": "cash_account",
+   "fieldtype": "Link",
+   "label": "Cash Account",
+   "mandatory_depends_on": "eval:doc.status==\"Final\"",
+   "options": "Account"
+  },
+  {
+   "depends_on": "eval:doc.clearance_type==\"Inward\"",
+   "fetch_from": "purchase_order.base_total",
+   "fieldname": "purchase_order_total",
+   "fieldtype": "Float",
+   "label": "Purchase Order Total"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-06-02 22:26:15.759769",
+ "modified_by": "Administrator",
+ "module": "cons",
+ "name": "Clearance",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
